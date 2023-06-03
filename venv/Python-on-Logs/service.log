@@ -1,0 +1,12 @@
+[info]  /v1/employee/john 200 OK 10ms
+[info]  /v1/employee/sjohn 200 OK 10ms
+[info]  /v1/employee/mjohn 200 OK 10ms
+[info]  /v1/employee/edward 200 OK 15ms
+[info]  /v1/employee/edward 300 Error 15ms
+[info]  /v1/employee/charlie 400 BadRequest 1ms
+[info]  /v1/employee/burt 401 Unauthorized 10ms
+[info]  /v1/employee/john 401 Unauthorized 10ms
+[info]  /v1/employee/joel 404 NotFound 1ms
+[info]  /v1/employee/weston 500 InternalServerError 1ms
+[info]  /v1/employee/nik 503 ServiceUnavailable 2ms
+[info]  /v1/employee/john200 504 GatewayTimeout 5ms
