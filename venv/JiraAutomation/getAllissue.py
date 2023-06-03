@@ -17,7 +17,7 @@ query = {
 }
 
 repsonse = requests.get(jira_url, headers=headers, params=query, auth=(jira_user, jira_password), verify=False)
-#print(repsonse.text)
+print(repsonse.text)
 
 data=repsonse.json()
 issues=data["issues"]
