@@ -1,7 +1,6 @@
-import requests
 import json
-from datetime import datetime
-import os
+
+import requests
 
 jira_user = 'sk5131702@gmail.com'
 jira_password = 'ATATT3xFfGF0Sms7gX6e1U8Qf06J5BhTieJ6n2zFEDIWutq7ECY6e--s0dpv5hssyXCgCQkhsgIuhZcjIuHskLUj21xv24GzMmM1j1x65KjhLuIbQnm0PwNQBw31DXtsDvhl2bOJhKI2gvOERTcSeu4nLMppImdLzyx_pYHRj7MxQf-p_VUcEOg=02B566A7'
@@ -12,15 +11,14 @@ headers = {
     "Content": "application/json"
 }
 
-query = {
-    'jql': 'project = SPLUN'
-}
+jql = "project in ('ADHOC', 'SPLUN')"
 
-repsonse = requests.get(jira_url, headers=headers, params=query, auth=(jira_user, jira_password), verify=False)
-# print(repsonse.text)
+repsonse = requests.get(jira_url, headers=headers, params=jql, auth=(jira_user, jira_password), verify=False)
 
 data = repsonse.json()
 issues = data["issues"]
 for issue in issues:
-    print(issue["key"])
-    print(issue["fields"][1])
+    #print(issue)
+    #da = json.dumps(issue)
+    #sa = json.loads(da)
+    print(json.dumps(issue['key']))

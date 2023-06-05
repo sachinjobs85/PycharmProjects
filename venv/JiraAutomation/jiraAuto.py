@@ -15,5 +15,7 @@ jira = JIRA(options=jiraOptions, basic_auth=(
 
 # Search all issues mentioned against a project name.
 for singleIssue in jira.search_issues(jql_str='project = SPLUN'):
-    print('{}, {}, {}, {}'.format(singleIssue.key, singleIssue.fields.issuetype.name, singleIssue.fields.project.key, singleIssue.fields.customfield_10031, singleIssue.fields.summary,
-                             singleIssue.fields.reporter.displayName))
+    list = singleIssue.fields.customfield_10020[0]
+    #list.sort()
+    print(str(list))
+    #print('{}, {}, {}, {}, {}, {}'.format(singleIssue.key, singleIssue.fields.issuetype.name, singleIssue.fields.project.key, singleIssue.fields.customfield_10031, singleIssue.fields.customfield_10020[0].name, singleIssue.fields.customfield_10020[0].state, singleIssue.fields.summary,singleIssue.fields.reporter.displayName))
