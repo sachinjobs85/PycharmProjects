@@ -10,13 +10,21 @@ chat_id = "5130182527"
 client = InfluxDBClient(host='192.168.0.184', port=8086)
 list_db = client.get_list_database()
 db = client.switch_database('ESB')
-results = client.query('select * from tuxx limit 1')
+results = client.query('select * from tuxx')
 
 for measurement in results.get_points(measurement='tuxx'):
     method = measurement['Method']
     api = measurement['apiName']
+    counter = measurement['counter']
+    ip = measurement['ip']
+    responseTime = measurement['responseTime']
+    statusCode = measurement['statusCode']
     print(method, end=' ')
-    print(api)
+    print(api, end=' ')
+    print(counter, end=' ')
+    print(ip, end=' ')
+    print(responseTime, end=' ')
+    print(statusCode)
 
 
 
