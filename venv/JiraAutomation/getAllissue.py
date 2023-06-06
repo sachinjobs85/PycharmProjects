@@ -18,7 +18,4 @@ repsonse = requests.get(jira_url, headers=headers, params=jql, auth=(jira_user, 
 data = repsonse.json()
 issues = data["issues"]
 for issue in issues:
-    #print(issue)
-    #da = json.dumps(issue)
-    #sa = json.loads(da)
-    print(json.dumps(issue['key']))
+    print(json.dumps(issue))
