@@ -24,3 +24,4 @@ issues = data["issues"]
 for issue in issues:
     print(issue["fields"]["customfield_10031"])
     print(issue["fields"]["customfield_10020"])
+    print("Done")
