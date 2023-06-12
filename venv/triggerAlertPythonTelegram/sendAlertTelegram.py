@@ -18,7 +18,7 @@ if os.path.getsize('output.txt') != 0:
     timestr = time.strftime("%Y-%m-%d %H:%M")
     print("Current Date Time: " + " " + str(timestr))
 
-    if n[2] == "GET":
+    if n[3] == "HEALTH_WARN":
         print("Alert Triggered !!")
         msg_count = "Health Warn Alert :" + "\t" + str(count) + " " + "\U0001F631"
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={msg_count}"

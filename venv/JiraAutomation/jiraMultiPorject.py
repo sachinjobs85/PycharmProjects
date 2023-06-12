@@ -13,21 +13,21 @@ headers = {
 query_DCE = {
     'jql': 'project = DCE'
 }
-query_IC = {
-    'jql': 'project = IC'
-}
+#query_IC = {
+#    'jql': 'project = IC'
+#}
 
 repsonse_DCE = requests.get(jira_url, headers=headers, params=query_DCE, auth=(jira_user, jira_password), verify=False)
-repsonse_IC = requests.get(jira_url, headers=headers, params=query_IC, auth=(jira_user, jira_password), verify=False)
+#repsonse_IC = requests.get(jira_url, headers=headers, params=query_IC, auth=(jira_user, jira_password), verify=False)
 
 data_DCE = repsonse_DCE.json()
 issues_DCE = data_DCE["issues"]
 
-data_IC = repsonse_IC.json()
-issues_IC = data_IC["issues"]
+#data_IC = repsonse_IC.json()
+#issues_IC = data_IC["issues"]
 
 for issue_DCE in issues_DCE:
     print(json.dumps(issue_DCE))
 
-for issue_IC in issues_IC:
-    print(json.dumps(issue_IC["key"]))
+#for issue_IC in issues_IC:
+#    print(json.dumps(issue_IC["key"]))
