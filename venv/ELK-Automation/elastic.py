@@ -16,7 +16,7 @@ number_of_data_nodes = response_json['number_of_data_nodes']
 active_primary_shards = response_json['active_primary_shards']
 active_shards = response_json['active_shards']
 
-output = ("cluster_name" + ":" + cluster_name + "\n" + "status" + ":" + status + "\n" + "timed_out" + ":" + str(timed_out) + "\n" + "number_of_nodes" + ":" + str(number_of_nodes) + "\n" + "number_of_data_nodes" + ":" + str(number_of_data_nodes) + "\n" + "active_primary_shards" + ":" + str(active_primary_shards) + "\n" + "active_shards" + ":" + str(active_shards))
+output = ("Hi Team" + "\n" + "\n" + "\n" + "Please find the Elasticsearch Health Status below:" + "\n" + "cluster_name" + ":" + cluster_name + "\n" + "status" + ":" + status + "\n" + "timed_out" + ":" + str(timed_out) + "\n" + "number_of_nodes" + ":" + str(number_of_nodes) + "\n" + "number_of_data_nodes" + ":" + str(number_of_data_nodes) + "\n" + "active_primary_shards" + ":" + str(active_primary_shards) + "\n" + "active_shards" + ":" + str(active_shards) + "\n" + "\n" + "\n" + "Thanks" + "\n" + "\n" + "Regards" + "\n" + "Automation Team")
 print(output)
 
 sender_email = "sachinjobs85@gmail.com"
@@ -79,3 +79,7 @@ server.login(smtp_username, smtp_password)
 server.sendmail(sender_email, recipient_email, msg.as_string())
 server.quit()
 print("Email Sent with Body")
+
+
+# S55044466
+# Qazxc@1245!
