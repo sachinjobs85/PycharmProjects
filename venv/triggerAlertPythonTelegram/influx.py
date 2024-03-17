@@ -7,25 +7,27 @@ import json
 TOKEN = "5558538416:AAGDhGDtwDOYl-69RgRfNu1JB7U2g6ffVqY"
 chat_id = "5130182527"
 
-client = InfluxDBClient(host='192.168.0.184', port=8086)
+client = InfluxDBClient(host='192.168.29.133', port=8086)
 list_db = client.get_list_database()
 db = client.switch_database('ESB')
-query = "select last(pendingUserRequesetCount), HealthState from healthCheck where (statsType='ThreadInfo' AND HealthState='HEALTH_WARN') AND time>now()-5m GROUP BY fqdn,server"
+query = "select * from (select last(pendingUserRequesetCount), HealthState from healthCheck where (statsType='ThreadInfo' AND HealthState='HEALTH_WARN') GROUP BY fqdn,server)"
 results = client.query(query)
 # cpu_points = list(results.get_points(measurement='healthCheck'))
 
 print(results)
 for measurement in results.get_points(measurement='healthCheck'):
+    print(measurement)
+    #fqdn = measurement['server']
     method = measurement['last']
     HealthState = measurement['HealthState']
-    #fqdn = measurement['fqdn']
-    # serverr = measurement['server']
+    fqdn = measurement['fqdn']
+    serverr = measurement['server']
     # responseTime = measurement['responseTime']
     # statusCode = measurement['statusCode']
     print(method, end=' ')
     print(HealthState, end=' ')
-    #print(fqdn, end=' ')
-    # print(serverr, end=' ')
+    print(fqdn, end=' ')
+    print(serverr)
     # print(responseTime, end=' ')
     # print(statusCode)
 
